@@ -6,7 +6,7 @@ public class HelloWorld {
 		int temp = 1;
 		System.out.println("Hello world!");
 		modify(temp);
-		System.out.println(temp);
+		System.out.println(temp); // still 1
 	}
 
 	private static void modify(int temp) {
