@@ -1,6 +1,9 @@
 package leetcode;
 
-/*
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
  * Given a binary tree, check whether it is a mirror of itself 
  * (ie, symmetric around its center).
  * For example, this binary tree is symmetric:
@@ -22,10 +25,6 @@ But the following is not:
 Note:
 Bonus points if you could solve it both recursively and iteratively.
  */
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-
 public class SymmetricTree {
 	public boolean isSymmetric(TreeNode root) {
 		return isSymmetric(root, root);
