@@ -28,9 +28,9 @@ public class NextPermutation {
 		if (len <= 1)
 			return;
 		for (int i = len - 1; i > 0; i--) {
-			// 找到第一个下降的元素
+			// Search the first decreasing number
 			if (num[i - 1] < num[i]) {
-				// 找到被交换的那个数， min value in num[i...len - 1] that > num[i - 1]
+				// Search the target to be swapped:， min value in num[i...len - 1] that > num[i - 1]
 				int j = i;
 				while (j < len && num[j] > num[i - 1])
 					j++;
