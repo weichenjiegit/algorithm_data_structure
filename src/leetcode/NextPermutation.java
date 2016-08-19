@@ -43,7 +43,6 @@ public class NextPermutation {
 			}
 		}
 		Arrays.sort(num);
-		return;
 	}
 
 	// Textbook solution
