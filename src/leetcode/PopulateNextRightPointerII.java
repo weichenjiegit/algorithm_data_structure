@@ -10,12 +10,21 @@ package leetcode;
  * You may only use constant extra space.
  * 
  * For example, Given the following binary tree,
- * 
- * 1 / \ 2 3 / \ \ 4 5 7
- * 
+ * <pre>
+ *       1
+ *      / \
+ *     2   3
+ *    / \   \
+ *   4   5   7
+ * </pre>
  * After calling your function, the tree should look like:
- * 
- * 1 -> NULL / \ 2 -> 3 -> NULL / \ \ 4-> 5 -> 7 -> NULL
+ * <pre>
+ *        1 -> NULL
+ *      /  \
+ *     2 -> 3 -> NULL
+ *    / \    \
+ *   4-> 5 -> 7 -> NULL
+ * </pre>
  */
 public class PopulateNextRightPointerII {
 	// algorithm based on level order traversal
