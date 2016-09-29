@@ -51,7 +51,7 @@ public class InsertDeleteGetRandomDuplicatesAllowed {
 			if (!map.containsKey(val)) {
 				return false;
 			}
-			// Get arbitary index of the ArrayList that contains val
+			// Get arbitrary index of the ArrayList that contains val
 			Set<Integer> valSet = map.get(val);
 			int indexToReplace = valSet.iterator().next();
 
@@ -59,9 +59,8 @@ public class InsertDeleteGetRandomDuplicatesAllowed {
 			int numAtLastPlace = nums.get(nums.size() - 1);
 			Set<Integer> replaceWith = map.get(numAtLastPlace);
 
-			// Replace val at arbitary index with very last number
+			// Replace val at arbitrary index with very last number
 			nums.set(indexToReplace, numAtLastPlace);
-
 			// Remove appropriate index
 			valSet.remove(indexToReplace);
 
@@ -70,6 +69,38 @@ public class InsertDeleteGetRandomDuplicatesAllowed {
 				replaceWith.remove(nums.size() - 1);
 				replaceWith.add(indexToReplace);
 			}
+			nums.remove(nums.size() - 1);
+
+			// Remove map entry if set is now empty, then return
+			if (valSet.isEmpty()) {
+				map.remove(val);
+			}
+			return true;
+		}
+
+		/**
+		 * Removes a value from the collection. Returns true if the collection contained the
+		 * specified element.
+		 */
+		public boolean remove2(int val) {
+			if (!map.containsKey(val)) {
+				return false;
+			}
+
+			// Obtain the set of the number in the last place of the ArrayList
+			int numAtLastPlace = nums.get(nums.size() - 1);
+			Set<Integer> replaceWith = map.get(numAtLastPlace);
+
+			// Get arbitrary index of the ArrayList that contains val
+			Set<Integer> valSet = map.get(val);
+
+			if (numAtLastPlace != val) {
+				int indexToReplace = valSet.iterator().next();
+				nums.set(indexToReplace, numAtLastPlace);
+				valSet.remove(indexToReplace);
+				replaceWith.add(indexToReplace);
+			}
+			replaceWith.remove(nums.size() - 1);
 			nums.remove(nums.size() - 1);
 
 			// Remove map entry if set is now empty, then return
